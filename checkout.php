@@ -172,30 +172,6 @@ if(isset($message)){
                     
                 </form>
             </div>
-            <div class="col-md-6">
-                <h2>Payment Information</h2>
-                
-                <form>
-                    <div class="form-group">
-                        <label for="CardHolderName">CardHolder Name</label>
-                        <input type="text" class="form-control" id="expiryDate" placeholder="Full Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="cardNumber">Credit Card Number</label>
-                        <input type="text" class="form-control" id="cardNumber" placeholder="Enter your Card Number">
-                    </div>
-                   
-                    <div class="form-group">
-                        <label for="expiryDate">Expiry Date</label>
-                        <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
-                    </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV</label>
-                        <input type="password" class="form-control" id="cvv" placeholder="000">
-                    </div>
-                    
-                </form>
-            </div>
         </div>
         <div class="text-center mt-4"> 
            <a href="orderplaced.php"><button class="btn btn-primary">Place Order</button></a>
