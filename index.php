@@ -1,4 +1,24 @@
-<?<php>
+<?php
+
+
+include 'config.php';
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
+    header('location: logandreg.php');
+}
+
+if(isset($_GET['logout'])){
+    unset($user_id);
+    session_destroy();
+    header('location: logandreg.php');
+};
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +34,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<?php
+if(isset($message)){
+    foreach($message as $message){
+        echo '<div class="message" onclick="this.remove();">'.$message.'</div>';
+
+    }
+}   
+?> 
+
+<?php 
+        $select_user = mysqli_query($conn, "SELECT  * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+        if(mysqli_num_rows($select_user) > 0){
+            $fetch_user = mysqli_fetch_assoc($select_user);
+        };
+?>
 
 
 
